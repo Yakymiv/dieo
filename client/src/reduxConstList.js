@@ -1,0 +1,4 @@
+export const ADD_ORDERS_LIST = 'ADD_ORDERS_LIST';
+export const ADD_MACHINES_LIST = 'ADD_MACHINES_LIST';
+export const ADD_MECHANIC_LIST = 'ADD_MECHANIC_LIST';
+export const ADD_TOOL_LIST = 'ADD_TOOL_LIST';
