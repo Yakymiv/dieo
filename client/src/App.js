@@ -2,9 +2,11 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import MainUser from './components/user/main';
 import MainDie from './components/die/main';
+import CheckPassword from './components/checkPassword';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 const OpenDefault = () => {
+
   return(
      <div className="mb-2">
       <Link to="/dieOrder">
@@ -12,11 +14,7 @@ const OpenDefault = () => {
           Оператор
         </Button>
       </Link>
-      <Link to="/dieCenter">
-      <Button variant="info" size="lg">
-        Дай центр
-      </Button>
-      </Link>
+      <CheckPassword />
     </div>
   );
 }
@@ -27,8 +25,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path='/' component={OpenDefault} />
-        <Route path='/dieCenter' component={MainDie} />
         <Route path='/dieOrder' component={MainUser} />
+        <Route path='/dieCenter' component={MainDie} />
       </Switch>
     </BrowserRouter>
   );
