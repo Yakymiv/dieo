@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const CheckPassword = () => {
     const password = 'Rr412762';
@@ -13,13 +14,25 @@ const CheckPassword = () => {
         setInputData(e.target.value);
     }
 
-    const handleCheck = () => {
+    const myButton = () => {
         const value = String(inputData);
         if (value === password) {
-            window.location.assign('/dieCenter');
+            return(
+                <Link to="/dieCenter">
+                    <Button variant="primary">
+                        Получити доступ
+                    </Button>
+                </Link>
+            );
         } else {
-            setInputData('');
-           handleClose();
+            return(
+                <Button variant="primary" onClick={() => {
+                    setInputData('');
+                    handleClose();
+                }}>
+                    Получити доступ
+                </Button>
+            )
         }
     }
 
@@ -42,9 +55,7 @@ const CheckPassword = () => {
             </Form.Group>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" onClick={handleCheck}>
-                    Получити доступ
-                </Button>
+                {myButton()}
             </Modal.Footer>
         </Modal>
         </React.Fragment>
