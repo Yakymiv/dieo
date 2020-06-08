@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const CheckPassword = () => {
-    const password = 'Rr412762';
+const CheckPassword = ({textButton, myPassword, myPage}) => {
+    const password = String(myPassword);
     const [show, setShow] = useState(false);
     const [inputData, setInputData] = useState('');
 
@@ -18,7 +18,7 @@ const CheckPassword = () => {
         const value = String(inputData);
         if (value === password) {
             return(
-                <Link to="/dieCenter">
+                <Link to={myPage}>
                     <Button variant="primary">
                         Получити доступ
                     </Button>
@@ -39,7 +39,7 @@ const CheckPassword = () => {
     return(
         <React.Fragment>
         <Button variant="primary" size="lg" onClick={handleShow}>
-          Дай центр
+          {textButton}
         </Button>
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
