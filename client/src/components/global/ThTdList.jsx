@@ -8,6 +8,9 @@ const StyleDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 25px;
+    margin: 5px;
+    font-size: 14px;
 `;
 
 const StyleGreenSpan = styled.span`
@@ -86,7 +89,6 @@ const TdList = ({ children, dieCenter, selectPage, dispatch }) => {
                     'Помилка на стадії відображеня, невірно зчитано/вказано найменування наладчика'
                 )}</Td>
             {changeData()}
-            {/* <Td>{children.ordertime}</Td> */}
             {statusElement()}
         </tr>
     );
