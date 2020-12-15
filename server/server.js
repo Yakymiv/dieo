@@ -35,7 +35,6 @@ app.get('/die', async(req, res) => {
 app.post('/die', async(req, res) => {
     try {
         const { machine, app, material, mechanic } = req.body;
-        console.log(req.body);
         const addDieOrder = await pool.query(
             'INSERT INTO orderbase (machine, app, material, mechanic, ordertime, orderstatus)'
             + 'VALUES ( $1, $2, $3, $4, now(), false ) RETURNING *',
